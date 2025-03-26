@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wkfd1llec-go-gitops
+  description: This is GitOps manifest for wkfd1llec-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=wkfd1llec-go
+    backstage.io/kubernetes-id: wkfd1llec-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wkfd1llec-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wkfd1llec-go
